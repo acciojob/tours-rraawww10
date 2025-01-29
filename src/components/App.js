@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Loading from "./Loading";
 import Tours from "./Tours";
 
-const API_URL = "https://example.com/tours"; // Replace with actual API URL
+const API_URL = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=" // Replace with actual API URL
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -11,7 +11,7 @@ const App = () => {
   const fetchTours = async () => {
     setLoading(true);
     try {
-      const response = await fetch(API_URL);
+      const response = await fetch("https://api.openweathermap.org/data/2.5/weather?units=metric&q=");
       const data = await response.json();
       setTours(data);
       setLoading(false);
