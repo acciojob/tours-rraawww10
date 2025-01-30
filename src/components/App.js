@@ -21,7 +21,7 @@ const App = () => {
 
   if (loading) return <Loading />;
 
-return (
+  return (
     <div id="main" className="container">
       {tours.length === 0 ? (
         <div>
@@ -33,5 +33,6 @@ return (
       )}
     </div>
   );
+};
 
 export default App;
