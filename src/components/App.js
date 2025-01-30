@@ -1,50 +1,38 @@
 import React, { useState, useEffect } from "react";
-import Loading from "../components/Loading";
-import Tours from "../components/Tours";
+import Tours from "./Tours";
+import Loading from "./Loading";
 
-const API_URL = "https://mock-api-url.com/tours"; // Replace with the actual API
-
-function App() {
+const App = () => {
   const [loading, setLoading] = useState(true);
   const [tours, setTours] = useState([]);
 
-  const fetchTours = async () => {
-    setLoading(true);
-    try {
-      const response = await fetch(API_URL);
-      const data = await response.json();
-      setTours(data);
-      setLoading(false);
-    } catch (error) {
-      console.error("Error fetching tours:", error);
-      setLoading(false);
-    }
-  };
-
   useEffect(() => {
-    fetchTours();
+    fetch("your-api-url-here")
+      .then((response) => response.json())
+      .then((data) => {
+        setTours(data);
+        setLoading(false);
+      });
   }, []);
 
-  const removeTour = (id) => {
+  const handleDeleteTour = (id) => {
     setTours(tours.filter((tour) => tour.id !== id));
   };
 
-  if (loading) {
-    return <Loading />;
-  }
+  if (loading) return <Loading />;
 
   return (
-    <main>
+    <div className="container">
       {tours.length === 0 ? (
-        <div className="empty-state">
+        <div>
           <h2>No tours left</h2>
-          <button onClick={fetchTours}>Refresh</button>
+          <button onClick={() => setLoading(true)}>Refresh</button>
         </div>
       ) : (
-        <Tours tours={tours} removeTour={removeTour} />
+        <Tours tours={tours} onDelete={handleDeleteTour} />
       )}
-    </main>
+    </div>
   );
-}
+};
 
 export default App;
