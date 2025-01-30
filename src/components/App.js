@@ -21,8 +21,8 @@ const App = () => {
 
   if (loading) return <Loading />;
 
-  return (
-    <div className="container">
+return (
+    <div id="main" className="container">
       {tours.length === 0 ? (
         <div>
           <h2>No tours left</h2>
@@ -33,6 +33,5 @@ const App = () => {
       )}
     </div>
   );
-};
 
 export default App;
