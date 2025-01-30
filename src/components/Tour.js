@@ -17,7 +17,7 @@ return (
         {isExpanded ? "See less" : "Show more"}
       </button>
       <p>${price}</p>
-      <button id={`delete-btn-${id}`} onClick={() => onDelete(id)}>Delete Tour</button>
+      <button id={`delete-btn-rec6d6T3q5EBIdCfD`} onClick={() => onDelete(id)}>Delete Tour</button>
     </div>
   );
 export default Tour;
