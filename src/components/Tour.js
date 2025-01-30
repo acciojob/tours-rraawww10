@@ -8,16 +8,18 @@ const Tour = ({ tour, onDelete }) => {
     setIsExpanded(!isExpanded);
   };
 
-return (
+  return (
     <div className="tour">
       <img src={image} alt={name} />
       <h3>{name}</h3>
-      <p id={`tour-item-para-rec6d6T3q5EBIdCfD`}>{isExpanded ? info : `${info.substring(0, 200)}...`}</p>
+      <p id={`tour-item-para-${id}`}>{isExpanded ? info : `${info.substring(0, 200)}...`}</p>
       <button onClick={toggleInfo}>
         {isExpanded ? "See less" : "Show more"}
       </button>
       <p>${price}</p>
-      <button id={`delete-btn-rec6d6T3q5EBIdCfD`} onClick={() => onDelete(id)}>Delete Tour</button>
+      <button id={`delete-btn-${id}`} onClick={() => onDelete(id)}>Delete Tour</button>
     </div>
   );
+};
+
 export default Tour;
