@@ -14,7 +14,7 @@ const Tour = ({ tour, onDelete }) => {
       <h3>{name}</h3>
       <p id={`tour-item-para-${id}`}>{isExpanded ? info : `${info.substring(0, 200)}...`}</p>
       <button id={`see-more-${id}`} onClick={toggleInfo}>
-  {isExpanded ? "See less" : "See more"}
+  {isExpanded ? "Show less" : "See more"}
 </button>
 
       <p>${price}</p>
