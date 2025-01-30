@@ -13,7 +13,7 @@ const Tour = ({ tour, onDelete }) => {
       <img src={image} alt={name} />
       <h3>{name}</h3>
       <p id={`tour-item-para-${id}`}>{isExpanded ? info : `${info.substring(0, 200)}...`}</p>
-      <button id={`delete-btn-${id}`} onClick={toggleInfo}>
+      <button id={`see-more-${id}`} onClick={toggleInfo}>
   {isExpanded ? "See less" : "See more"}
 </button>
 
