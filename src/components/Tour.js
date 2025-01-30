@@ -12,8 +12,8 @@ const Tour = ({ tour, onDelete }) => {
     <div className="tour">
       <img src={image} alt={name} />
       <h3>{name}</h3>
-      <p id={`tour-item-para-rec6d6T3q5EBIdCfD`}>{isExpanded ? info : `${info.substring(0, 200)}...`}</p>
-      <button id={`see-more-${id}`} onClick={toggleInfo}>
+      <p id={`tour-item-para-${id}`}>{isExpanded ? info : `${info.substring(0, 200)}...`}</p>
+      <button id={`delete-btn-${id}`} onClick={toggleInfo}>
   {isExpanded ? "See less" : "See more"}
 </button>
 
